@@ -4,8 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pankaj Kumar | Certified Product Associate Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
   <style>
     :root {
       --primary: #2563eb;
@@ -13,12 +16,12 @@
       --accent: #059669;
       --bg: #f8fafc;
       --card-bg: #fff;
-      --shadow: 0 4px 24px rgba(44,62,80,0.08);
+      --shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
       --radius: 16px;
       --text: #1e293b;
       --text-light: #64748b;
       --nav-bg: #fff;
-      --nav-shadow: 0 2px 8px rgba(44,62,80,0.07);
+      --nav-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
       --toggle-bg: #e0e7ef;
       --toggle-icon: #2563eb;
     }
@@ -28,15 +31,17 @@
       --accent: #34d399;
       --bg: #181a20;
       --card-bg: #23262f;
-      --shadow: 0 4px 24px rgba(0,0,0,0.18);
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
       --text: #e5e7eb;
       --text-light: #a1a1aa;
       --nav-bg: #23262f;
-      --nav-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      --nav-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
       --toggle-bg: #23262f;
       --toggle-icon: #fbbf24;
     }
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
     html {
       scroll-behavior: smooth;
     }
@@ -54,7 +59,8 @@
       color: var(--primary);
       padding: 0 40px;
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       z-index: 100;
       display: flex;
       align-items: center;
@@ -101,7 +107,7 @@
       border: none;
       outline: none;
       transition: background 0.2s;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+      box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
     }
     .toggle-switch:hover {
       background: var(--primary);
@@ -137,7 +143,7 @@
       height: 160px;
       border-radius: 50%;
       border: 5px solid var(--primary);
-      box-shadow: 0 4px 24px rgba(44,62,80,0.13);
+      box-shadow: 0 4px 24px rgba(44, 62, 80, 0.13);
       margin-bottom: 10px;
       object-fit: cover;
       background: #e0e7ef;
@@ -148,14 +154,6 @@
       font-weight: 800;
       letter-spacing: 1px;
       color: var(--primary);
-    }
-    .hero p {
-      font-size: 1.15rem;
-      max-width: 650px;
-      margin: 0 auto;
-      font-weight: 400;
-      opacity: 0.97;
-      color: var(--text-light);
     }
     .hero .desc {
       font-size: 1.20rem;
@@ -226,7 +224,7 @@
     }
     .card:hover {
       transform: translateY(-6px) scale(1.025);
-      box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+      box-shadow: 0 8px 32px rgba(44, 62, 80, 0.13);
     }
     .card .icon {
       font-size: 2.1rem;
@@ -247,7 +245,7 @@
       margin-bottom: 18px;
       background: #e0e7ef;
       border-bottom: 2px solid #bae6fd;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+      box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
       display: block;
     }
     .skills {
@@ -266,7 +264,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+      box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
       margin-bottom: 6px;
       user-select: none;
     }
@@ -288,7 +286,7 @@
       justify-content: center;
       font-size: 1.5rem;
       transition: background 0.2s, color 0.2s;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+      box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
       border: 1.5px solid #bae6fd;
     }
     .contact-links a:hover {
@@ -305,7 +303,7 @@
       font-size: 1.1rem;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.09);
+      box-shadow: 0 2px 8px rgba(44, 62, 80, 0.09);
       transition: background 0.2s, transform 0.2s;
       border: none;
       user-select: none;
@@ -316,20 +314,46 @@
       color: #fff;
     }
     @media (max-width: 900px) {
-      nav { padding: 0 12px; }
-      .hero { padding: 90px 0 60px 0; }
-      section { padding: 0 8px; }
-      h2 { font-size: 1.3rem; }
-      .card { padding: 18px 10px; }
-      .project-img { height: 120px; }
-      .grid { gap: 18px; }
+      nav {
+        padding: 0 12px;
+      }
+      .hero {
+        padding: 90px 0 60px 0;
+      }
+      section {
+        padding: 0 8px;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      .card {
+        padding: 18px 10px;
+      }
+      .project-img {
+        height: 120px;
+      }
+      .grid {
+        gap: 18px;
+      }
     }
     @media (max-width: 600px) {
-      .hero h1 { font-size: 1.5rem; }
-      .hero img { width: 90px; height: 90px; }
-      .resume-btn { font-size: 0.98rem; padding: 8px 16px; }
-      .project-img { height: 80px; }
-      nav ul { gap: 12px; }
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      .hero img {
+        width: 90px;
+        height: 90px;
+      }
+      .resume-btn {
+        font-size: 0.98rem;
+        padding: 8px 16px;
+      }
+      .project-img {
+        height: 80px;
+      }
+      nav ul {
+        gap: 12px;
+      }
     }
     footer {
       background: #f1f5f9;
@@ -347,230 +371,304 @@
       border-top: 1.5px solid #23262f;
     }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: none; }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
     }
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: none; }
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
 <body>
+  <nav>
+    <div class="logo">Pankaj Kumar</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button
+      class="toggle-switch"
+      id="theme-toggle"
+      aria-label="Toggle dark mode"
+    >
+      <i class="fas fa-moon"></i>
+    </button>
+  </nav>
 
-<nav>
-  <div class="logo">Pankaj Kumar</div>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="toggle-switch" id="theme-toggle" aria-label="Toggle dark mode">
-    <i class="fas fa-moon"></i>
-  </button>
-</nav>
-
-<section class="hero" id="home">
-  <div class="hero-content">
-    <img src="shared-image.jpg" alt="Pankaj Kumar">
-    <h1>Pankaj Kumar</h1>
-    <div class="desc">Certified Product Associate&nbsp;|&nbsp;Expert in Workflow Automation, Incident Management, SAP Master Data &amp; SLA Compliance&nbsp;|&nbsp;Strategic, Data-Driven Professional</div>
-    <div class="tags">
-      <span class="tag">Product Management</span>
-      <span class="tag">ITSM</span>
-      <span class="tag">Workflow Automation</span>
-      <span class="tag">Power BI</span>
-      <span class="tag">Incident Management</span>
-      <span class="tag">SAP Master Data</span>
-      <span class="tag">SLA Compliance</span>
-    </div>
-  </div>
-</section>
-
-<main>
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-      <span class="icon"><i class="fas fa-user-graduate"></i></span>
-      <p>Dynamic and results-driven Certified Product Associate with 2.5+ years of experience in IT service management, workflow automation, and business reporting.</p>
-      <p>Skilled at collaborating with cross-functional teams to launch, optimize, and automate enterprise ITSM solutions, enhancing customer satisfaction and operational excellence. Proficient in configuring incident and service catalog management, leading SLA compliance initiatives, and developing interactive dashboards for informed decision-making.</p>
-      <p>Adept at requirements gathering, process improvement, and enabling teams through actionable analytics and training. Committed to strategic thinking, continuous learning, and delivering adaptable, customer-centric solutions.</p>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <img src="assets/shared-image.jpg" alt="Pankaj Kumar" />
+      <h1>Pankaj Kumar</h1>
+      <div class="desc">
+        Certified Product Associate&nbsp;|&nbsp;Expert in Workflow Automation,
+        Incident Management, SAP Master Data &amp; SLA Compliance&nbsp;|&nbsp;Strategic,
+        Data-Driven Professional
+      </div>
+      <div class="tags">
+        <span class="tag">Product Management</span>
+        <span class="tag">ITSM</span>
+        <span class="tag">Workflow Automation</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Incident Management</span>
+        <span class="tag">SAP Master Data</span>
+        <span class="tag">SLA Compliance</span>
+      </div>
     </div>
   </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="grid">
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
       <div class="card">
-        <span class="icon"><i class="fas fa-briefcase"></i></span>
-        <strong>Helpdesk Executive</strong><br>
-        <span style="color:var(--primary);font-size:0.98em;">QG EBS Pvt Ltd (Quintes Global) | Jun 2023 – Present</span>
+        <span class="icon"
+          ><i class="fas fa-user-graduate"></i
+        ></span>
+        <p>
+          Dynamic and results-driven Certified Product Associate with 2.5+ years of experience
+          in IT service management, workflow automation, and business reporting.
+        </p>
+        <p>
+          Skilled at collaborating with cross-functional teams to launch, optimize, and
+          automate enterprise ITSM solutions, enhancing customer satisfaction and
+          operational excellence. Proficient in configuring incident and service catalog
+          management, leading SLA compliance initiatives, and developing interactive
+          dashboards for informed decision-making.
+        </p>
+        <p>
+          Adept at requirements gathering, process improvement, and enabling teams through
+          actionable analytics and training. Committed to strategic thinking, continuous
+          learning, and delivering adaptable, customer-centric solutions.
+        </p>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="icon"><i class="fas fa-briefcase"></i></span>
+          <strong>Helpdesk Executive</strong><br />
+          <span style="color: var(--primary); font-size: 0.98em"
+            >QG EBS Pvt Ltd (Quintes Global) | Jun 2023 – Present</span
+          >
+          <ul>
+            <li>Configured &amp; launched incident and service catalogs tailored to client workflows.</li>
+            <li>Automated ticket routing and SLA workflows; improved efficiency by 30%+.</li>
+            <li>Developed Power BI dashboards for incident tracking, resolution, and SLA compliance.</li>
+            <li>Delivered user and client training on ITSM tools and analytics/reporting.</li>
+            <li>Led client UAT, knowledge base development, and process rollouts.</li>
+            <li>Prepared and delivered Monthly Business Review reports for trend and SLA analysis.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="icon"><i class="fas fa-user-tie"></i></span>
+          <strong>Management Trainee</strong><br />
+          <span style="color: var(--primary); font-size: 0.98em"
+            >QG EBS Pvt Ltd (Quintes Global) | Jan 2023 – May 2023</span
+          >
+          <ul>
+            <li>Managed SAP Master Data for procurement and finance; improved data accuracy and reconciliation.</li>
+            <li>Developed 30+ SAP LSMW scripts automating data migrations, reducing manual work by 70%.</li>
+            <li>Piloted IT portal upgrade for improved ticketing efficiency and user adoption.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Product Management Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <img
+            class="project-img"
+            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
+            alt="Trinity Biotech Project Dashboard"
+          />
+          <span class="icon"><i class="fas fa-cogs"></i></span>
+          <strong style="color: var(--primary); font-size: 1.15em"
+            >Trinity Biotech (Mar 2025 – Apr 2025)</strong
+          >
+          <p>
+            Conducted gap analysis on ITSM workflows and standardized complex ticket templates
+            in ServiceDesk Plus. Set up automated SLA notifications and built real-time Power BI
+            dashboards for efficient workload monitoring. Facilitated hands-on training and authored
+            SOPs for support teams, improving process adoption and SLA compliance.
+          </p>
+        </div>
+        <div class="card">
+          <img
+            class="project-img"
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
+            alt="Aptia Softech Project Workflow"
+          />
+          <span class="icon"><i class="fas fa-cogs"></i></span>
+          <strong style="color: var(--primary); font-size: 1.15em"
+            >Aptia Softech (Mar 2025 – May 2025)</strong
+          >
+          <p>
+            Designed ticket approval workflows and mapped business logic in ServiceDesk Plus.
+            Integrated mail server settings, performed UAT with client users, and provided live onboarding
+            support. Optimized tool configuration for team needs, streamlining communication and support ticket
+            cycle across client departments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="card">
+        <div class="skills">
+          <span class="skill"><i class="fas fa-robot"></i> IT Service Management</span>
+          <span class="skill"><i class="fas fa-tasks"></i> Incident & Service Catalog Management</span>
+          <span class="skill"><i class="fas fa-bolt"></i> SLA Monitoring</span>
+          <span class="skill"><i class="fas fa-cogs"></i> Workflow Automation</span>
+          <span class="skill"><i class="fas fa-sync-alt"></i> Process Improvement</span>
+          <span class="skill"><i class="fas fa-stream"></i> Requirements Gathering</span>
+          <span class="skill"><i class="fas fa-database"></i> SAP Master Data / LSMW</span>
+          <span class="skill"><i class="fas fa-chart-bar"></i> Dashboards</span>
+          <span class="skill"><i class="fas fa-users"></i> Stakeholder Communication</span>
+          <span class="skill"><i class="fas fa-plug"></i> Third party & API Integration</span>
+          <span class="skill"><i class="fab fa-microsoft"></i> Power BI</span>
+          <span class="skill"><i class="fas fa-project-diagram"></i> JIRA</span>
+          <span class="skill"><i class="fas fa-layer-group"></i> POP</span>
+          <span class="skill"><i class="fas fa-pencil-ruler"></i> Wireframing & Prototyping</span>
+          <span class="skill"><i class="fas fa-database"></i> SQL</span>
+          <span class="skill"><i class="fas fa-file-excel"></i> Advanced Excel</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education & Certifications</h2>
+      <div class="grid">
+        <div class="card">
+          <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+          <strong>BA Program</strong><br />
+          <span style="color: var(--primary); font-size: 0.95em">University of Delhi | 2019 – 2022</span>
+        </div>
+        <div class="card">
+          <span class="icon"><i class="fas fa-certificate"></i></span>
+          <strong>Certified Product Associate</strong><br />
+          <span style="color: var(--primary); font-size: 0.95em">ManageEngine</span>
+        </div>
+        <div class="card">
+          <span class="icon"><i class="fas fa-certificate"></i></span>
+          <strong>Aha! Product Management Professional Certificate</strong><br />
+          <span style="color: var(--primary); font-size: 0.95em">Aha! &amp; LinkedIn</span>
+        </div>
+        <div class="card">
+          <span class="icon"><i class="fas fa-certificate"></i></span>
+          <strong>Becoming a Product Manager: A Complete Guide</strong><br />
+          <span style="color: var(--primary); font-size: 0.95em">IIBA</span>
+        </div>
+        <div class="card">
+          <span class="icon"><i class="fas fa-certificate"></i></span>
+          <strong>Data Analytics Essentials</strong><br />
+          <span style="color: var(--primary); font-size: 0.95em">CISCO</span>
+        </div>
+        <div class="card">
+          <span class="icon"><i class="fas fa-certificate"></i></span>
+          <strong>SAP Material Management</strong><br />
+          <span style="color: var(--primary); font-size: 0.95em">SAP Training Academy</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="volunteer">
+      <h2>Volunteer Leadership</h2>
+      <div class="card">
+        <span class="icon"><i class="fas fa-people-carry"></i></span>
+        <strong>Shelvin Foundation (Non-Profit Organization)</strong><br />
+        <span style="color: var(--primary); font-size: 0.98em"
+          >Creative Head of Department (Nov 2015 – Aug 2019)</span
+        >
         <ul>
-          <li>Configured & launched incident and service catalogs tailored to client workflows.</li>
-          <li>Automated ticket routing and SLA workflows; improved efficiency by 30%+.</li>
-          <li>Developed Power BI dashboards for incident tracking, resolution, and SLA compliance.</li>
-          <li>Delivered user and client training on ITSM tools and analytics/reporting.</li>
-          <li>Led client UAT, knowledge base development, and process rollouts.</li>
-          <li>Prepared and delivered Monthly Business Review reports for trend and SLA analysis.</li>
+          <li>Supervised 200+ student volunteers; led educational training initiatives.</li>
+          <li>Developed statistical performance reports for monthly/annual reviews.</li>
+          <li>Presented to community groups, promoting volunteer programs.</li>
         </ul>
       </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact & Links</h2>
       <div class="card">
-        <span class="icon"><i class="fas fa-user-tie"></i></span>
-        <strong>Management Trainee</strong><br>
-        <span style="color:var(--primary);font-size:0.98em;">QG EBS Pvt Ltd (Quintes Global) | Jan 2023 – May 2023</span>
-        <ul>
-          <li>Managed SAP Master Data for procurement and finance; improved data accuracy and reconciliation.</li>
-          <li>Developed 30+ SAP LSMW scripts automating data migrations, reducing manual work by 70%.</li>
-          <li>Piloted IT portal upgrade for improved ticketing efficiency and user adoption.</li>
-        </ul>
+        <div class="contact-links">
+          <a href="tel:8826633346" title="Phone"><i class="fas fa-phone"></i></a>
+          <a href="mailto:pankajkoomar99@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/pankajkoomar" target="_blank" title="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/pankajkoomar/"
+            target="_blank"
+            title="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+        <a
+          class="resume-btn"
+          href="assets/CV_Pankaj_Kumar.pdf"
+          download
+          ><i class="fas fa-download"></i> Download Resume (PDF)</a
+        >
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section id="projects">
-    <h2>Product Management Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <img class="project-img" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Trinity Biotech Project Dashboard">
-        <span class="icon"><i class="fas fa-cogs"></i></span>
-        <strong style="color:var(--primary);font-size:1.15em;">Trinity Biotech (Mar 2025 – Apr 2025)</strong>
-        <p>Conducted gap analysis on ITSM workflows and standardized complex ticket templates in ServiceDesk Plus. Set up automated SLA notifications and built real-time Power BI dashboards for efficient workload monitoring. Facilitated hands-on training and authored SOPs for support teams, improving process adoption and SLA compliance.</p>
-      </div>
-      <div class="card">
-        <img class="project-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Aptia Softech Project Workflow">
-        <span class="icon"><i class="fas fa-cogs"></i></span>
-        <strong style="color:var(--primary);font-size:1.15em;">Aptia Softech (Mar 2025 – May 2025)</strong>
-        <p>Designed ticket approval workflows and mapped business logic in ServiceDesk Plus. Integrated mail server settings, performed UAT with client users, and provided live onboarding support. Optimized tool configuration for team needs, streamlining communication and support ticket cycle across client departments.</p>
-      </div>
-    </div>
-  </section>
+  <footer>
+    &copy; 2025 Pankaj Kumar. All rights reserved.
+  </footer>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-      <div class="skills">
-        <span class="skill"><i class="fas fa-robot"></i> IT Service Management</span>
-        <span class="skill"><i class="fas fa-tasks"></i> Incident & Service Catalog Management</span>
-        <span class="skill"><i class="fas fa-bolt"></i> SLA Monitoring</span>
-        <span class="skill"><i class="fas fa-cogs"></i> Workflow Automation</span>
-        <span class="skill"><i class="fas fa-sync-alt"></i> Process Improvement</span>
-        <span class="skill"><i class="fas fa-stream"></i> Requirements Gathering</span>
-        <span class="skill"><i class="fas fa-database"></i> SAP Master Data / LSMW</span>
-        <span class="skill"><i class="fas fa-chart-bar"></i> Dashboards</span>
-        <span class="skill"><i class="fas fa-users"></i> Stakeholder Communication</span>
-        <span class="skill"><i class="fas fa-plug"></i> Third party & API Integration</span>
-        <span class="skill"><i class="fab fa-microsoft"></i> Power BI</span>
-        <span class="skill"><i class="fas fa-project-diagram"></i> JIRA</span>
-        <span class="skill"><i class="fas fa-layer-group"></i> POP</span>
-        <span class="skill"><i class="fas fa-pencil-ruler"></i> Wireframing & Prototyping</span>
-        <span class="skill"><i class="fas fa-database"></i> SQL</span>
-        <span class="skill"><i class="fas fa-file-excel"></i> Advanced Excel</span>
-      </div>
-    </div>
-  </section>
+  <script>
+    // Dark mode toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const icon = toggleBtn.querySelector('i');
 
-  <section id="education">
-    <h2>Education & Certifications</h2>
-    <div class="grid">
-      <div class="card">
-        <span class="icon"><i class="fas fa-graduation-cap"></i></span>
-        <strong>BA Program</strong><br>
-        <span style="color:var(--primary);font-size:0.95em;">University of Delhi | 2019 – 2022</span>
-      </div>
-      <div class="card">
-        <span class="icon"><i class="fas fa-certificate"></i></span>
-        <strong>Certified Product Associate</strong><br>
-        <span style="color:var(--primary);font-size:0.95em;">ManageEngine</span>
-      </div>
-      <div class="card">
-        <span class="icon"><i class="fas fa-certificate"></i></span>
-        <strong>Aha! Product Management Professional Certificate</strong><br>
-        <span style="color:var(--primary);font-size:0.95em;">Aha! &amp; LinkedIn</span>
-      </div>
-      <div class="card">
-        <span class="icon"><i class="fas fa-certificate"></i></span>
-        <strong>Becoming a Product Manager: A Complete Guide</strong><br>
-        <span style="color:var(--primary);font-size:0.95em;">IIBA</span>
-      </div>
-      <div class="card">
-        <span class="icon"><i class="fas fa-certificate"></i></span>
-        <strong>Data Analytics Essentials</strong><br>
-        <span style="color:var(--primary);font-size:0.95em;">CISCO</span>
-      </div>
-      <div class="card">
-        <span class="icon"><i class="fas fa-certificate"></i></span>
-        <strong>SAP Material Management</strong><br>
-        <span style="color:var(--primary);font-size:0.95em;">SAP Training Academy</span>
-      </div>
-    </div>
-  </section>
+    function setTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      if (theme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+      localStorage.setItem('theme', theme);
+    }
 
-  <section id="volunteer">
-    <h2>Volunteer Leadership</h2>
-    <div class="card">
-      <span class="icon"><i class="fas fa-people-carry"></i></span>
-      <strong>Shelvin Foundation (Non-Profit Organization)</strong><br>
-      <span style="color:var(--primary);font-size:0.98em;">Creative Head of Department (Nov 2015 – Aug 2019)</span>
-      <ul>
-        <li>Supervised 200+ student volunteers; led educational training initiatives.</li>
-        <li>Developed statistical performance reports for monthly/annual reviews.</li>
-        <li>Presented to community groups, promoting volunteer programs.</li>
-      </ul>
-    </div>
-  </section>
+    toggleBtn.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(current);
+    });
 
-  <section id="contact">
-    <h2>Contact & Links</h2>
-    <div class="card">
-      <div class="contact-links">
-        <a href="tel:8826633346" title="Phone"><i class="fas fa-phone"></i></a>
-        <a href="mailto:pankajkoomar99@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://pankajkoomar.github.io/pankajkoomar/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/pankajkoomar/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      </div>
-      <a class="resume-btn" href="CV_Pankaj_Kumar.pdf" download><i class="fas fa-download"></i> Download Resume (PDF)</a>
-    </div>
-  </section>
-</main>
-
-<footer>
-  &copy; 2025 Pankaj Kumar. All rights reserved.
-</footer>
-
-<script>
-// Dark mode toggle
-const toggleBtn = document.getElementById('theme-toggle');
-const html = document.documentElement;
-const icon = toggleBtn.querySelector('i');
-
-function setTheme(theme) {
-  html.setAttribute('data-theme', theme);
-  if (theme === 'dark') {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-  } else {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
-  }
-  localStorage.setItem('theme', theme);
-}
-
-toggleBtn.addEventListener('click', () => {
-  const current = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  setTheme(current);
-});
-
-// On load, set theme to light by default, even if system prefers dark
-(function() {
-  const saved = localStorage.getItem('theme');
-  if (saved) {
-    setTheme(saved);
-  } else {
-    setTheme('light');
-  }
-})();
-</script>
+    // On load, set theme to light by default, even if system prefers dark
+    (function () {
+      const saved = localStorage.getItem('theme');
+      if (saved) {
+        setTheme(saved);
+      } else {
+        setTheme('light');
+      }
+    })();
+  </script>
 </body>
 </html>
