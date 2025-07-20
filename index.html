@@ -151,7 +151,7 @@
     }
     .hero p {
       font-size: 1.15rem;
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
       font-weight: 400;
       opacity: 0.97;
@@ -239,6 +239,17 @@
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 32px;
     }
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
+      margin-bottom: 18px;
+      background: #e0e7ef;
+      border-bottom: 2px solid #bae6fd;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+      display: block;
+    }
     .skills {
       display: flex;
       flex-wrap: wrap;
@@ -302,39 +313,20 @@
       transform: translateY(-2px) scale(1.04);
       color: #fff;
     }
-    table.skill-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 8px;
-      margin-bottom: 16px;
-    }
-    table.skill-table th, table.skill-table td {
-      padding: 10px 8px;
-      border: 1px solid #e0e7ef;
-      text-align: left;
-      font-size: 1.03rem;
-    }
-    table.skill-table th {
-      background-color: #e0f2fe;
-      color: var(--primary);
-      font-weight: 700;
-    }
-    html[data-theme='dark'] table.skill-table th {
-      background-color: #23262f;
-      color: #60a5fa;
-    }
     @media (max-width: 900px) {
       nav { padding: 0 12px; }
       .hero { padding: 90px 0 60px 0; }
       section { padding: 0 8px; }
       h2 { font-size: 1.3rem; }
       .card { padding: 18px 10px; }
+      .project-img { height: 120px; }
       .grid { gap: 18px; }
     }
     @media (max-width: 600px) {
       .hero h1 { font-size: 1.5rem; }
       .hero img { width: 90px; height: 90px; }
       .resume-btn { font-size: 0.98rem; padding: 8px 16px; }
+      .project-img { height: 80px; }
       nav ul { gap: 12px; }
     }
     footer {
@@ -392,7 +384,7 @@
       <span class="tag">SAP Master Data</span>
       <span class="tag">SLA Compliance</span>
     </div>
-    <p>Dynamic and results-driven Certified Product Associate with <strong>2 years and 6 months of experience</strong> in IT service management, workflow automation, and business reporting. Skilled at collaborating with cross-functional teams to launch, optimize, and automate enterprise ITSM solutions, enhancing customer satisfaction and operational excellence. Proficient in configuring incident and service catalog management, leading SLA compliance initiatives, and developing interactive dashboards for informed decision-making. Adept at requirements gathering, process improvement, and enabling teams through actionable analytics and training. Committed to strategic thinking, continuous learning, and delivering adaptable, customer-centric solutions.</p>
+    <p>Dynamic and results-driven Certified Product Associate with <strong>2.5+ years of experience</strong> in IT service management, workflow automation, and business reporting. Skilled at collaborating with cross-functional teams to launch, optimize, and automate enterprise ITSM solutions, enhancing customer satisfaction and operational excellence. Proficient in configuring incident and service catalog management, leading SLA compliance initiatives, and developing interactive dashboards for informed decision-making. Adept at requirements gathering, process improvement, and enabling teams through actionable analytics and training. Committed to strategic thinking, continuous learning, and delivering adaptable, customer-centric solutions.</p>
   </div>
 </section>
 
@@ -440,81 +432,41 @@
     <h2>Product Management Projects</h2>
     <div class="grid">
       <div class="card">
+        <img class="project-img" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Trinity Biotech Project Dashboard">
         <span class="icon"><i class="fas fa-cogs"></i></span>
-        <strong>Trinity Biotech (Mar 2025 – Apr 2025)</strong>
-        <ul>
-          <li>Conducted gap analysis on ITSM workflows and standardized ticket templates.</li>
-          <li>Automated SLA notifications and created real-time workload dashboards.</li>
-          <li>Facilitated client training and SOP documentation for support teams.</li>
-        </ul>
+        <strong style="color:var(--primary);font-size:1.15em;">Trinity Biotech (Mar 2025 – Apr 2025)</strong>
+        <p>Conducted gap analysis on ITSM workflows and standardized complex ticket templates in ServiceDesk Plus. Set up automated SLA notifications and built real-time Power BI dashboards for efficient workload monitoring. Facilitated hands-on training and authored SOPs for support teams, improving process adoption and SLA compliance.</p>
       </div>
       <div class="card">
+        <img class="project-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Aptia Softech Project Workflow">
         <span class="icon"><i class="fas fa-cogs"></i></span>
-        <strong>Aptia Softech (Mar 2025 – May 2025)</strong>
-        <ul>
-          <li>Designed ticket workflow and approval chains in ServiceDesk Plus.</li>
-          <li>Oversaw onboarding, live UAT, and mail server integration for client users.</li>
-          <li>Optimized tool settings to align with specific client needs.</li>
-        </ul>
+        <strong style="color:var(--primary);font-size:1.15em;">Aptia Softech (Mar 2025 – May 2025)</strong>
+        <p>Designed ticket approval workflows and mapped business logic in ServiceDesk Plus. Integrated mail server settings, performed UAT with client users, and provided live onboarding support. Optimized tool configuration for team needs, streamlining communication and support ticket cycle across client departments.</p>
       </div>
     </div>
   </section>
 
   <section id="skills">
-    <h2>Skills & Tools</h2>
+    <h2>Skills</h2>
     <div class="card">
-      <table class="skill-table">
-        <tr>
-          <th>Product Management Skills</th>
-          <th>IT & Process Automation Tools</th>
-          <th>Data & Analytics Tools</th>
-        </tr>
-        <tr>
-          <td>Stakeholder Collaboration</td>
-          <td>SAP (incl. LSMW)</td>
-          <td>Power BI</td>
-        </tr>
-        <tr>
-          <td>Requirement Gathering</td>
-          <td>ManageEngine ServiceDesk Plus</td>
-          <td>Advanced Excel</td>
-        </tr>
-        <tr>
-          <td>SLA Monitoring & Compliance</td>
-          <td>Newgen iBPS</td>
-          <td>SQL</td>
-        </tr>
-        <tr>
-          <td>Incident & Service Catalog Mgmt.</td>
-          <td>JIRA</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Workflow Automation</td>
-          <td>POP</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Process Improvement</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>API & Third-Party Integration</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Dashboards & Business Reporting</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Wireframing & Prototyping</td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
+      <div class="skills">
+        <span class="skill"><i class="fas fa-robot"></i> IT Service Management</span>
+        <span class="skill"><i class="fas fa-tasks"></i> Incident & Service Catalog Management</span>
+        <span class="skill"><i class="fas fa-bolt"></i> SLA Monitoring</span>
+        <span class="skill"><i class="fas fa-cogs"></i> Workflow Automation</span>
+        <span class="skill"><i class="fas fa-sync-alt"></i> Process Improvement</span>
+        <span class="skill"><i class="fas fa-stream"></i> Requirements Gathering</span>
+        <span class="skill"><i class="fas fa-database"></i> SAP Master Data / LSMW</span>
+        <span class="skill"><i class="fas fa-chart-bar"></i> Dashboards</span>
+        <span class="skill"><i class="fas fa-users"></i> Stakeholder Communication</span>
+        <span class="skill"><i class="fas fa-plug"></i> Third party & API Integration</span>
+        <span class="skill"><i class="fab fa-microsoft"></i> Power BI</span>
+        <span class="skill"><i class="fas fa-project-diagram"></i> JIRA</span>
+        <span class="skill"><i class="fas fa-layer-group"></i> POP</span>
+        <span class="skill"><i class="fas fa-pencil-ruler"></i> Wireframing & Prototyping</span>
+        <span class="skill"><i class="fas fa-database"></i> SQL</span>
+        <span class="skill"><i class="fas fa-file-excel"></i> Advanced Excel</span>
+      </div>
     </div>
   </section>
 
@@ -577,17 +529,7 @@
         <a href="https://github.com/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/pankajkoomar/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
       </div>
-      <!--
-      <a class="resume-btn" href="assets/Pankaj_Kumar_Resume.pdf" download><i class="fas fa-download"></i> Download Resume (PDF)</a>
-      -->
-    </div>
-    <div class="card">
-      <strong>Strengths:</strong>
-      <ul>
-        <li>Strategic Thinking & Adaptability</li>
-        <li>Leadership & Collaboration</li>
-        <li>Attention to Detail</li>
-      </ul>
+      <a class="resume-btn" href="CV_Pankaj_Kumar.pdf" download><i class="fas fa-download"></i> Download Resume (PDF)</a>
     </div>
   </section>
 </main>
@@ -629,6 +571,5 @@ toggleBtn.addEventListener('click', () => {
   }
 })();
 </script>
-
 </body>
 </html>
