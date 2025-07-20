@@ -3,8 +3,364 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pankaj Kumar | Product & ITSM Portfolio</title>
-  <!-- Include Fonts, Icons, CSS (same as original template) -->
+  <title>Pankaj Kumar | Certified Product Associate Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #0ea5e9;
+      --accent: #059669;
+      --bg: #f8fafc;
+      --card-bg: #fff;
+      --shadow: 0 4px 24px rgba(44,62,80,0.08);
+      --radius: 16px;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --nav-bg: #fff;
+      --nav-shadow: 0 2px 8px rgba(44,62,80,0.07);
+      --toggle-bg: #e0e7ef;
+      --toggle-icon: #2563eb;
+    }
+    html[data-theme='dark'] {
+      --primary: #60a5fa;
+      --secondary: #0ea5e9;
+      --accent: #34d399;
+      --bg: #181a20;
+      --card-bg: #23262f;
+      --shadow: 0 4px 24px rgba(0,0,0,0.18);
+      --text: #e5e7eb;
+      --text-light: #a1a1aa;
+      --nav-bg: #23262f;
+      --nav-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      --toggle-bg: #23262f;
+      --toggle-icon: #fbbf24;
+    }
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Poppins', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    nav {
+      width: 100%;
+      background: var(--nav-bg);
+      color: var(--primary);
+      padding: 0 40px;
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      height: 64px;
+      box-shadow: var(--nav-shadow);
+    }
+    nav .logo {
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      flex: 1;
+      color: var(--primary);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      font-size: 1.05rem;
+    }
+    nav ul li a:hover {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+    }
+    .toggle-switch {
+      margin-left: 24px;
+      background: var(--toggle-bg);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+    }
+    .toggle-switch:hover {
+      background: var(--primary);
+    }
+    .toggle-switch i {
+      color: var(--toggle-icon);
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+    .hero {
+      background: linear-gradient(120deg, #e0f2fe 60%, #f8fafc 100%);
+      color: var(--text);
+      padding: 120px 0 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+    html[data-theme='dark'] .hero {
+      background: linear-gradient(120deg, #23262f 60%, #181a20 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      animation: fadeIn 1.2s;
+    }
+    .hero img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid var(--primary);
+      box-shadow: 0 4px 24px rgba(44,62,80,0.13);
+      margin-bottom: 10px;
+      object-fit: cover;
+      background: #e0e7ef;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--primary);
+    }
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 400;
+      opacity: 0.97;
+      color: var(--text-light);
+    }
+    .hero .desc {
+      font-size: 1.20rem;
+      max-width: 720px;
+      margin: 0 auto;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .hero .tags {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .hero .tag {
+      background: #e0f2fe;
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: var(--primary);
+      border: 1px solid #bae6fd;
+      transition: background 0.2s;
+    }
+    .hero .tag:hover {
+      background: #bae6fd;
+    }
+    html[data-theme='dark'] .hero .tag {
+      background: #23262f;
+      color: #60a5fa;
+      border: 1px solid #334155;
+    }
+    main {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+    section {
+      max-width: 1100px;
+      margin: 0 auto 0 auto;
+      padding: 0;
+      position: relative;
+      z-index: 2;
+    }
+    h2 {
+      font-size: 2rem;
+      border-left: 5px solid var(--primary);
+      padding-left: 14px;
+      margin-bottom: 32px;
+      color: var(--primary);
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-top: 80px;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+      transition: transform 0.18s, box-shadow 0.18s;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1s;
+      color: var(--text-light);
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.025);
+      box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+    }
+    .card .icon {
+      font-size: 2.1rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 10px;
+    }
+    .skill {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: #fff;
+      border-radius: 18px;
+      padding: 7px 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+      margin-bottom: 6px;
+    }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 10px;
+      align-items: center;
+    }
+    .contact-links a {
+      color: var(--primary);
+      background: #e0f2fe;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+      border: 1.5px solid #bae6fd;
+    }
+    .contact-links a:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .resume-btn {
+      display: inline-block;
+      margin-top: 18px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 24px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.09);
+      transition: background 0.2s, transform 0.2s;
+      border: none;
+    }
+    .resume-btn:hover {
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      transform: translateY(-2px) scale(1.04);
+      color: #fff;
+    }
+    table.skill-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+    table.skill-table th, table.skill-table td {
+      padding: 10px 8px;
+      border: 1px solid #e0e7ef;
+      text-align: left;
+      font-size: 1.03rem;
+    }
+    table.skill-table th {
+      background-color: #e0f2fe;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    html[data-theme='dark'] table.skill-table th {
+      background-color: #23262f;
+      color: #60a5fa;
+    }
+    @media (max-width: 900px) {
+      nav { padding: 0 12px; }
+      .hero { padding: 90px 0 60px 0; }
+      section { padding: 0 8px; }
+      h2 { font-size: 1.3rem; }
+      .card { padding: 18px 10px; }
+      .grid { gap: 18px; }
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.5rem; }
+      .hero img { width: 90px; height: 90px; }
+      .resume-btn { font-size: 0.98rem; padding: 8px 16px; }
+      nav ul { gap: 12px; }
+    }
+    footer {
+      background: #f1f5f9;
+      color: #64748b;
+      text-align: center;
+      padding: 28px 10px 18px;
+      font-size: 1rem;
+      margin-top: 60px;
+      letter-spacing: 1px;
+      border-top: 1.5px solid #e0e7ef;
+    }
+    html[data-theme='dark'] footer {
+      background: #23262f;
+      color: #a1a1aa;
+      border-top: 1.5px solid #23262f;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -17,21 +373,26 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="toggle-switch" id="theme-toggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
 </nav>
 
 <section class="hero" id="home">
   <div class="hero-content">
-    <img src="assets/pankaj_profile.jpg" alt="Pankaj Kumar">
+    <img src="shared-image.jpg" alt="Pankaj Kumar">
     <h1>Pankaj Kumar</h1>
-    <p>Certified Product Associate | ITSM Specialist | Power BI | SAP MM | SQL</p>
+    <div class="desc">Certified Product Associate&nbsp;|&nbsp;Expert in Workflow Automation, Incident Management, SAP Master Data &amp; SLA Compliance&nbsp;|&nbsp;Strategic, Data-Driven Professional</div>
     <div class="tags">
-      <span class="tag">Power BI</span>
-      <span class="tag">SAP MM</span>
-      <span class="tag">SQL</span>
-      <span class="tag">ServiceDesk Plus</span>
-      <span class="tag">Workflow Automation</span>
       <span class="tag">Product Management</span>
+      <span class="tag">ITSM</span>
+      <span class="tag">Workflow Automation</span>
+      <span class="tag">Power BI</span>
+      <span class="tag">Incident Management</span>
+      <span class="tag">SAP Master Data</span>
+      <span class="tag">SLA Compliance</span>
     </div>
+    <p>Dynamic and results-driven Certified Product Associate with <strong>2 years and 6 months of experience</strong> in IT service management, workflow automation, and business reporting. Skilled at collaborating with cross-functional teams to launch, optimize, and automate enterprise ITSM solutions, enhancing customer satisfaction and operational excellence. Proficient in configuring incident and service catalog management, leading SLA compliance initiatives, and developing interactive dashboards for informed decision-making. Adept at requirements gathering, process improvement, and enabling teams through actionable analytics and training. Committed to strategic thinking, continuous learning, and delivering adaptable, customer-centric solutions.</p>
   </div>
 </section>
 
@@ -39,44 +400,10 @@
   <section id="about">
     <h2>About Me</h2>
     <div class="card">
+      <span class="icon"><i class="fas fa-user-graduate"></i></span>
       <p>
-        Certified Product Associate with 1.5+ years of experience in IT service management, incident and service catalog configuration, SLA monitoring, and stakeholder collaboration. Known for streamlining workflows, driving user adoption, and crafting insightful dashboards using Power BI.
+        Motivated professional with a strong record in product and IT service management. Hands-on expertise in workflow automation, incident response, master data management, process improvements, and actionable analytics. Experienced in leading automation projects, supporting major client onboarding, optimizing workflows, and training users on modern ITSM tools. A proactive communicator with a passion for continuous development and excellence.
       </p>
-      <p>
-        Skilled in SAP Master Data Management, LSMW scripting, and ServiceDesk Plus implementation. Passionate about solving problems through structured thinking, data visualization, and continuous process improvement. Seeking to grow into strategic product and business roles.
-      </p>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <strong style="color:var(--primary);font-size:1.15em;">Trinity Biotech (Mar '25 – Apr '25)</strong>
-        <p>Conducted ITSM gap analysis and standardized ticket workflows. Automated SLA alerts and created live dashboards for real-time performance monitoring. Facilitated client training and SOP documentation.</p>
-      </div>
-      <div class="card">
-        <strong style="color:var(--primary);font-size:1.15em;">Aptia Softech (Mar '25 – May '25)</strong>
-        <p>Designed ticket workflows and approval hierarchies in ServiceDesk Plus. Provided onboarding, live UAT support, and optimized mail server and SLA settings as per business needs.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-      <div class="skills">
-        <span class="skill">Power BI</span>
-        <span class="skill">SQL</span>
-        <span class="skill">SAP MM</span>
-        <span class="skill">ServiceDesk Plus</span>
-        <span class="skill">JIRA</span>
-        <span class="skill">Workflow Automation</span>
-        <span class="skill">LSMW</span>
-        <span class="skill">Wireframing</span>
-        <span class="skill">Process Optimization</span>
-        <span class="skill">Dashboards</span>
-      </div>
     </div>
   </section>
 
@@ -84,24 +411,183 @@
     <h2>Experience</h2>
     <div class="grid">
       <div class="card">
+        <span class="icon"><i class="fas fa-briefcase"></i></span>
         <strong>Helpdesk Executive</strong><br>
-        <span style="color:var(--primary);font-size:0.98em;">QG EBS Pvt Ltd (Quintes Global) | Jun '23 – Present</span>
-        <p>Launched custom incident/service catalogs and dashboards in Power BI. Automated workflows, improved compliance, trained users, and produced executive MBR reports with SLA metrics.</p>
+        <span style="color:var(--primary);font-size:0.98em;">QG EBS Pvt Ltd (Quintes Global) | Jun 2023 – Present</span>
+        <ul>
+          <li>Configured & launched incident and service catalogs tailored to client workflows.</li>
+          <li>Automated ticket routing and SLA workflows; improved efficiency by 30%+.</li>
+          <li>Developed Power BI dashboards for incident tracking, resolution, and SLA compliance.</li>
+          <li>Delivered user and client training on ITSM tools and analytics/reporting.</li>
+          <li>Led client UAT, knowledge base development, and process rollouts.</li>
+          <li>Prepared and delivered Monthly Business Review reports for trend and SLA analysis.</li>
+        </ul>
       </div>
       <div class="card">
+        <span class="icon"><i class="fas fa-user-tie"></i></span>
         <strong>Management Trainee</strong><br>
-        <span style="color:var(--primary);font-size:0.98em;">QG EBS Pvt Ltd | Jan '23 – May '23</span>
-        <p>Managed SAP master data, built 30+ LSMW scripts, led IT support portal upgrade to boost adoption and performance.</p>
+        <span style="color:var(--primary);font-size:0.98em;">QG EBS Pvt Ltd (Quintes Global) | Jan 2023 – May 2023</span>
+        <ul>
+          <li>Managed SAP Master Data for procurement and finance; improved data accuracy and reconciliation.</li>
+          <li>Developed 30+ SAP LSMW scripts automating data migrations, reducing manual work by 70%.</li>
+          <li>Piloted IT portal upgrade for improved ticketing efficiency and user adoption.</li>
+        </ul>
       </div>
     </div>
   </section>
 
+  <section id="projects">
+    <h2>Product Management Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="icon"><i class="fas fa-cogs"></i></span>
+        <strong>Trinity Biotech (Mar 2025 – Apr 2025)</strong>
+        <ul>
+          <li>Conducted gap analysis on ITSM workflows and standardized ticket templates.</li>
+          <li>Automated SLA notifications and created real-time workload dashboards.</li>
+          <li>Facilitated client training and SOP documentation for support teams.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-cogs"></i></span>
+        <strong>Aptia Softech (Mar 2025 – May 2025)</strong>
+        <ul>
+          <li>Designed ticket workflow and approval chains in ServiceDesk Plus.</li>
+          <li>Oversaw onboarding, live UAT, and mail server integration for client users.</li>
+          <li>Optimized tool settings to align with specific client needs.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Tools</h2>
+    <div class="card">
+      <table class="skill-table">
+        <tr>
+          <th>Product Management Skills</th>
+          <th>IT & Process Automation Tools</th>
+          <th>Data & Analytics Tools</th>
+        </tr>
+        <tr>
+          <td>Stakeholder Collaboration</td>
+          <td>SAP (incl. LSMW)</td>
+          <td>Power BI</td>
+        </tr>
+        <tr>
+          <td>Requirement Gathering</td>
+          <td>ManageEngine ServiceDesk Plus</td>
+          <td>Advanced Excel</td>
+        </tr>
+        <tr>
+          <td>SLA Monitoring & Compliance</td>
+          <td>Newgen iBPS</td>
+          <td>SQL</td>
+        </tr>
+        <tr>
+          <td>Incident & Service Catalog Mgmt.</td>
+          <td>JIRA</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Workflow Automation</td>
+          <td>POP</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Process Improvement</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>API & Third-Party Integration</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Dashboards & Business Reporting</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wireframing & Prototyping</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education & Certifications</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+        <strong>BA Program</strong><br>
+        <span style="color:var(--primary);font-size:0.95em;">University of Delhi | 2019 – 2022</span>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-certificate"></i></span>
+        <strong>Certified Product Associate</strong><br>
+        <span style="color:var(--primary);font-size:0.95em;">ManageEngine</span>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-certificate"></i></span>
+        <strong>Aha! Product Management Professional Certificate</strong><br>
+        <span style="color:var(--primary);font-size:0.95em;">Aha! &amp; LinkedIn</span>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-certificate"></i></span>
+        <strong>Becoming a Product Manager: A Complete Guide</strong><br>
+        <span style="color:var(--primary);font-size:0.95em;">IIBA</span>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-certificate"></i></span>
+        <strong>Data Analytics Essentials</strong><br>
+        <span style="color:var(--primary);font-size:0.95em;">CISCO</span>
+      </div>
+      <div class="card">
+        <span class="icon"><i class="fas fa-certificate"></i></span>
+        <strong>SAP Material Management</strong><br>
+        <span style="color:var(--primary);font-size:0.95em;">SAP Training Academy</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="volunteer">
+    <h2>Volunteer Leadership</h2>
+    <div class="card">
+      <span class="icon"><i class="fas fa-people-carry"></i></span>
+      <strong>Shelvin Foundation (Non-Profit Organization)</strong><br>
+      <span style="color:var(--primary);font-size:0.98em;">Creative Head of Department (Nov 2015 – Aug 2019)</span>
+      <ul>
+        <li>Supervised 200+ student volunteers; led educational training initiatives.</li>
+        <li>Developed statistical performance reports for monthly/annual reviews.</li>
+        <li>Presented to community groups, promoting volunteer programs.</li>
+      </ul>
+    </div>
+  </section>
+
   <section id="contact">
-    <h2>Contact</h2>
-    <div class="card contact-links">
-      <a href="mailto:pankajkoomar99@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/pankajkoomar" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a class="resume-btn" href="assets/Pankaj_Kumar_Resume.pdf" download><i class="fas fa-download"></i> Download Resume</a>
+    <h2>Contact & Links</h2>
+    <div class="card">
+      <div class="contact-links">
+        <a href="tel:8826633346" title="Phone"><i class="fas fa-phone"></i></a>
+        <a href="mailto:pankajkoomar99@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/pankajkoomar/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <!--
+      <a class="resume-btn" href="assets/Pankaj_Kumar_Resume.pdf" download><i class="fas fa-download"></i> Download Resume (PDF)</a>
+      -->
+    </div>
+    <div class="card">
+      <strong>Strengths:</strong>
+      <ul>
+        <li>Strategic Thinking & Adaptability</li>
+        <li>Leadership & Collaboration</li>
+        <li>Attention to Detail</li>
+      </ul>
     </div>
   </section>
 </main>
@@ -110,7 +596,39 @@
   &copy; 2025 Pankaj Kumar. All rights reserved.
 </footer>
 
-<!-- Include JavaScript from original template (dark mode toggle, etc.) -->
+<script>
+// Dark mode toggle
+const toggleBtn = document.getElementById('theme-toggle');
+const html = document.documentElement;
+const icon = toggleBtn.querySelector('i');
+
+function setTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  if (theme === 'dark') {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  } else {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+  }
+  localStorage.setItem('theme', theme);
+}
+
+toggleBtn.addEventListener('click', () => {
+  const current = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  setTheme(current);
+});
+
+// On load, set theme to light by default, even if system prefers dark
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    setTheme(saved);
+  } else {
+    setTheme('light');
+  }
+})();
+</script>
 
 </body>
 </html>
