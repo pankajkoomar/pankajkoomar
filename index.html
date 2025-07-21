@@ -73,6 +73,8 @@
       letter-spacing: 2px;
       flex: 1;
       color: var(--primary);
+      user-select: none;
+      z-index: 102;
     }
     nav ul {
       list-style: none;
@@ -80,6 +82,7 @@
       gap: 32px;
       margin: 0;
       padding: 0;
+      z-index: 101;
     }
     nav ul li a {
       color: var(--text);
@@ -108,6 +111,7 @@
       outline: none;
       transition: background 0.2s;
       box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+      z-index: 102;
     }
     .toggle-switch:hover {
       background: var(--primary);
@@ -116,6 +120,115 @@
       color: var(--toggle-icon);
       font-size: 1.3rem;
       transition: color 0.2s;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      margin-left: 18px;
+      cursor: pointer;
+      color: var(--primary);
+      z-index: 102;
+    }
+    /* Mobile Nav */
+    @media (max-width: 900px) {
+      nav {
+        padding: 0 12px;
+      }
+      .hero {
+        padding: 90px 0 60px 0;
+      }
+      section {
+        padding: 0 8px;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      .card {
+        padding: 18px 10px;
+      }
+      .project-img {
+        height: 120px;
+      }
+      .grid {
+        gap: 18px;
+      }
+      /* Hamburger menu shows */
+      .menu-toggle {
+        display: block;
+      }
+      nav ul {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100vw;
+        background: var(--nav-bg);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 8px 0 12px 0;
+        border-top: 1px solid #e5e7eb;
+        box-shadow: var(--nav-shadow);
+        display: none;
+      }
+      nav ul.open {
+        display: flex;
+      }
+      nav ul li {
+        width: 100%;
+      }
+      nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .toggle-switch {
+        margin-left: 12px;
+        margin-right: 2px;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      .hero img {
+        width: 90px;
+        height: 90px;
+      }
+      .resume-btn {
+        font-size: 0.98rem;
+        padding: 8px 16px;
+      }
+      .project-img {
+        height: 80px;
+      }
+      nav ul li a {
+        font-size: 1.1rem;
+        padding: 12px 16px;
+      }
+      nav ul {
+        top: 56px;
+      }
+      nav {
+        height: 56px;
+      }
+    }
+    /* Ensures menu is always visible on desktop */
+    @media (min-width: 901px) {
+      nav ul {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        background: none;
+        box-shadow: none;
+      }
+      .menu-toggle {
+        display: none;
+      }
     }
     .hero {
       background: linear-gradient(120deg, #e0f2fe 60%, #f8fafc 100%);
@@ -313,48 +426,6 @@
       transform: translateY(-2px) scale(1.04);
       color: #fff;
     }
-    @media (max-width: 900px) {
-      nav {
-        padding: 0 12px;
-      }
-      .hero {
-        padding: 90px 0 60px 0;
-      }
-      section {
-        padding: 0 8px;
-      }
-      h2 {
-        font-size: 1.3rem;
-      }
-      .card {
-        padding: 18px 10px;
-      }
-      .project-img {
-        height: 120px;
-      }
-      .grid {
-        gap: 18px;
-      }
-    }
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.5rem;
-      }
-      .hero img {
-        width: 90px;
-        height: 90px;
-      }
-      .resume-btn {
-        font-size: 0.98rem;
-        padding: 8px 16px;
-      }
-      .project-img {
-        height: 80px;
-      }
-      nav ul {
-        gap: 12px;
-      }
-    }
     footer {
       background: #f1f5f9;
       color: #64748b;
@@ -395,7 +466,11 @@
 <body>
   <nav>
     <div class="logo">Pankaj Kumar</div>
-    <ul>
+    <!-- Hamburger icon for mobile screens -->
+    <button class="menu-toggle" id="nav-toggle" aria-label="Open navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul id="nav-list">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -435,9 +510,7 @@
     <section id="about">
       <h2>About Me</h2>
       <div class="card">
-        <span class="icon"
-          ><i class="fas fa-user-graduate"></i
-        ></span>
+        <span class="icon"><i class="fas fa-user-graduate"></i></span>
         <p>
           Dynamic and results-driven Certified Product Associate with 2.5+ years of experience
           in IT service management, workflow automation, and business reporting.
@@ -668,6 +741,40 @@
         setTheme('light');
       }
     })();
+
+    // Responsive Mobile Navigation
+    const navToggle = document.getElementById('nav-toggle');
+    const navList = document.getElementById('nav-list');
+
+    navToggle.addEventListener('click', function() {
+      navList.classList.toggle('open');
+      // Toggle hamburger/cross icon
+      const iconToggle = navToggle.querySelector('i');
+      iconToggle.classList.toggle('fa-bars');
+      iconToggle.classList.toggle('fa-times');
+    });
+
+    // Close menu on link click (mobile)
+    document.querySelectorAll('#nav-list a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          navList.classList.remove('open');
+          const icon = navToggle.querySelector('i');
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-times');
+        }
+      });
+    });
+
+    // Optional: on resize, if desktop, make sure nav is visible and icon is correct
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        navList.classList.remove('open');
+        const icon = navToggle.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+      }
+    });
   </script>
 </body>
 </html>
