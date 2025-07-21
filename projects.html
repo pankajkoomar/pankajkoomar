@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pankaj Kumar | The Mobile Laptop Interface Whiteboard (WB-3000)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #0ea5e9;
+      --accent: #059669;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --nav-bg: #fff;
+      --nav-shadow: 0 2px 8px rgba(44,62,80,0.07);
+      --toggle-bg: #e0e7ef;
+      --toggle-icon: #2563eb;
+      --radius: 16px;
+      --shadow: 0 4px 24px rgba(44,62,80,0.08);
+    }
+    html[data-theme='dark'] {
+      --primary: #60a5fa;
+      --secondary: #0ea5e9;
+      --accent: #34d399;
+      --bg: #181a20;
+      --text: #e5e7eb;
+      --nav-bg: #23262f;
+      --nav-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      --toggle-bg: #23262f;
+      --toggle-icon: #fbbf24;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Poppins', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    nav {
+      width: 100%;
+      background: var(--nav-bg);
+      color: var(--primary);
+      padding: 0 40px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      height: 64px;
+      box-shadow: var(--nav-shadow);
+    }
+    nav .logo {
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+      flex: 1;
+      color: var(--primary);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      font-size: 1.05rem;
+    }
+    nav ul li a:hover {
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+    }
+    .toggle-switch {
+      margin-left: 24px;
+      background: var(--toggle-bg);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+    }
+    .toggle-switch:hover { background: var(--primary);}
+    .toggle-switch i {
+      color: var(--toggle-icon);
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+    .section-hero {
+      background: linear-gradient(120deg, #e0f2fe 60%, #f8fafc 100%);
+      color: var(--text);
+      padding: 110px 20px 64px 20px;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 40px auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    html[data-theme='dark'] .section-hero {
+      background: linear-gradient(120deg, #23262f 60%, #181a20 100%);
+    }
+    .section-hero h1 {
+      font-size: 2.5rem;
+      margin: 0 0 0 0;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--primary);
+    }
+    main {
+      width: 100%;
+      margin: 0 auto 60px auto;
+      padding: 0 20px;
+      max-width: 720px;
+      color: var(--text-light);
+    }
+    .project-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-top: 32px;
+      margin-bottom: 6px;
+    }
+    .project-date {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+    .project-description {
+      font-size: 1rem;
+      margin-bottom: 18px;
+      color: var(--text-light);
+    }
+    .project-list {
+      list-style: disc inside;
+      margin-left: 20px;
+      margin-bottom: 32px;
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+    .repo-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: var(--primary);
+      color: white;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background 0.2s;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.6);
+    }
+    .repo-button:hover { background: var(--secondary); }
+    a.back-link {
+      display: inline-block;
+      margin: 40px 0 0 0;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+    }
+    a.back-link:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+    footer {
+      background: #f1f5f9;
+      color: #64748b;
+      text-align: center;
+      padding: 28px 10px 18px;
+      font-size: 1rem;
+      margin-top: 60px;
+      letter-spacing: 1px;
+      border-top: 1.5px solid #e0e7ef;
+    }
+    html[data-theme='dark'] footer {
+      background: #23262f;
+      color: #a1a1aa;
+      border-top: 1.5px solid #23262f;
+    }
+    @media (max-width: 600px) {
+      .section-hero h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Pankaj Kumar</div>
+  <ul>
+    <li><a href="index.html">Portfolio</a></li>
+  </ul>
+  <button class="toggle-switch" id="theme-toggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </button>
+</nav>
+
+<section class="section-hero">
+  <h1>The Mobile Laptop Interface Whiteboard (WB-3000)</h1>
+</section>
+
+<main>
+  <section>
+    <div>
+      <div class="project-date">Let’s Work Together (LWT) LLC | 2025</div>
+      <div class="project-description">
+        An innovative, portable writing surface and laptop stand with USB/HDMI connectivity enabling real-time collaboration, annotation, and idea sharing. Targeting educators, business professionals, and mobile teams.
+      </div>
+      <ul class="project-list">
+        <li>Comprehensive Product Go-to-Market Lifecycle: Beta validation, launch, demand generation, and end-of-life strategy.</li>
+        <li>Beta Plan to validate usability, performance, and customer satisfaction before launch.</li>
+        <li>Launch Plan focusing on market readiness, logistics, and communications.</li>
+        <li>Demand Generation aimed at market awareness, influencer engagement, and customer acquisition.</li>
+        <li>End-of-Life Plan ensuring smooth product retirement and customer transition.</li>
+        <li>Competitive pricing with rich features to lead the interactive whiteboard segment.</li>
+      </ul>
+      <a href="https://github.com/pankajkoomar/Projects/tree/main/The%20Mobile%20Laptop%20Interface%20Whiteboard%20(WB-3000)"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="repo-button">
+        View Project Repository on GitHub
+      </a>
+    </div>
+    <a class="back-link" href="index.html">
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Pankaj Kumar. All rights reserved.
+</footer>
+
+<script>
+  // Dark mode toggle
+  const toggleBtn = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const icon = toggleBtn.querySelector('i');
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    if (theme === 'dark') {
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    } else {
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    }
+    localStorage.setItem('theme', theme);
+  }
+  toggleBtn.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    setTheme(current);
+  });
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      setTheme(saved);
+    } else {
+      setTheme('light');
+    }
+  })();
+</script>
+
+</body>
+</html>
